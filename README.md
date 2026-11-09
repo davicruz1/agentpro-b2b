@@ -21,7 +21,7 @@ Os dados encontrados sao gravados localmente em `leads_extraidos/`. Essa pasta e
 1. Clone o repositorio:
 
    ```bash
-   git clone https://github.com/SEU_USUARIO/agentpro-b2b.git
+   git clone https://github.com/davicruz1/agentpro-b2b.git
    cd agentpro-b2b
    ```
 
