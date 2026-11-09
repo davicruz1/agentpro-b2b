@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentPro | Automação B2B</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        background: '#09090b',
+                        surface: '#18181b',
+                        border: 'rgba(255, 255, 255, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #09090b; color: #ededed; }
+        .glass-panel {
+            background: rgba(24, 24, 27, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .spinner {
+            width: 40px; height: 40px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+    </style>
+</head>
+<body class="antialiased selection:bg-white selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b-0 border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <span class="font-semibold tracking-tight text-white">AgentPro</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <a href="#plataforma" class="hover:text-white transition">Plataforma</a>
+                <a href="#funcionalidades" class="hover:text-white transition">Funcionalidades</a>
+            </div>
+            <div>
+                <a href="#plataforma" class="text-sm font-medium bg-white text-black px-4 py-2 rounded-full hover:bg-zinc-200 transition shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                    Testar App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-16 px-6 text-center">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-zinc-300 mb-4">
+                <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                IA Generativa v3.5 Integrada
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight gradient-text pb-2">
+                Prospecção B2B <br/> no Piloto Automático.
+            </h1>
+            <p class="text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+                Mapeie empresas de alto padrão na Europa que não possuem presença digital. Nossa IA analisa o lead e redige abordagens de vendas hiper-personalizadas em alemão.
+            </p>
+        </div>
+    </section>
+
+    <section id="plataforma" class="px-6 pb-24">
+        <div class="max-w-5xl mx-auto">
+            <div class="glass-panel p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+                
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+                    <div class="space-y-2">
+                        <label class="text-xs font-semibold uppercase tracking-wider text-zinc-500">Localização Estratégica</label>
+                        <input type="text" id="cidade" value="Zürich" class="w-full bg-[#09090b] border border-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500 transition shadow-inner">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-semibold uppercase tracking-wider text-zinc-500">Nicho de Mercado</label>
+                        <select id="nicho" class="w-full bg-[#09090b] border border-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500 transition shadow-inner appearance-none">
+                            <option value="restaurantes">Restaurantes Premium</option>
+                            <option value="padarias_e_cafes">Confiseries & Cafés</option>
+                            <option value="clinicas_medicas">Clínicas Médicas</option>
+                            <option value="dentistas">Consultórios Odontológicos</option>
+                            <option value="escritorios_advocacia">Escritórios de Advocacia</option>
+                            <option value="arquitetos">Arquitetos e Design</option>
+                            <option value="estudios_tatuagem">Estúdios de Tatuagem</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button onclick="iniciarProspeccao()" id="btn-iniciar" class="w-full bg-white text-black font-semibold py-3 px-4 rounded-xl hover:bg-zinc-200 transition duration-200 flex justify-center items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            Extrair e Escrever
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden flex-col items-center justify-center py-20">
+                <div class="spinner mb-6"></div>
+                <h3 class="text-xl font-medium text-white">Agentes Infiltrando...</h3>
+                <p class="text-sm text-zinc-500 mt-2 text-center max-w-md">Realizando varredura implacável na web e cadenciando as requisições da IA para evitar bloqueios. Isso pode levar alguns segundos.</p>
+            </div>
+
+            <div id="resultados" class="grid grid-cols-1 gap-6 mt-8 hidden">
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-border py-12 text-center text-sm text-zinc-500">
+        <p>© 2026 AgentPro B2B. Construído para arbitrar mercados.</p>
+    </footer>
+
+    <script>
+        async function iniciarProspeccao() {
+            const cidade = document.getElementById('cidade').value;
+            const nicho = document.getElementById('nicho').value;
+            const btn = document.getElementById('btn-iniciar');
+            const containerResultados = document.getElementById('resultados');
+            const loading = document.getElementById('loading');
+
+            btn.disabled = true;
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+            containerResultados.classList.add('hidden');
+            containerResultados.innerHTML = '';
+            loading.classList.remove('hidden');
+            loading.classList.add('flex');
+
+            try {
+                const response = await fetch('/api/prospectar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ cidade, nicho })
+                });
+
+                const leads = await response.json();
+                if (!response.ok) throw new Error(leads.erro || 'Falha no servidor de IA');
+
+                loading.classList.add('hidden');
+                loading.classList.remove('flex');
+                containerResultados.classList.remove('hidden');
+
+                leads.forEach(lead => {
+                    const card = document.createElement('div');
+                    card.className = "glass-panel rounded-2xl p-6 md:p-8 hover:border-zinc-700 transition duration-300 flex flex-col md:flex-row gap-8 items-start";
+                    card.innerHTML = `
+                        <div class="flex-1 w-full space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-1">
+                                        <h3 class="text-xl font-bold text-white tracking-tight">${lead.nome}</h3>
+                                        <span class="px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider bg-white/10 text-zinc-300 border border-white/5">
+                                            Validação Rigorosa ✅
+                                        </span>
+                                    </div>
+                                    <p class="text-zinc-400 font-mono text-sm flex items-center gap-2">
+                                        📞 ${lead.telefone}
+                                    </p>
+                                </div>
+                                <a href="${lead.link_maps}" target="_blank" class="w-10 h-10 rounded-full bg-[#09090b] border border-border flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-500 transition" title="Ver no Google Maps">
+                                    📍
+                                </a>
+                            </div>
+
+                            <div class="bg-[#09090b] border border-border rounded-xl p-5 relative group">
+                                <div class="absolute -top-3 left-4 px-2 bg-[#09090b] text-[10px] font-bold uppercase tracking-widest text-zinc-500">
+                                    Copyweighting IA (Alemão e Português)
+                                </div>
+                                <p class="text-zinc-300 whitespace-pre-line text-sm leading-relaxed mt-2 font-mono selection:bg-zinc-800">
+                                    ${lead.mensagem}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="md:w-48 w-full shrink-0 flex flex-col justify-end pt-2">
+                            <a href="${lead.link_whatsapp}" target="_blank" class="w-full bg-[#052e16] text-[#34d399] border border-[#059669] hover:bg-[#064e3b] font-medium py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 text-sm shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                                Enviar Pitch
+                            </a>
+                            <p class="text-[10px] text-zinc-500 text-center mt-3 uppercase tracking-wider font-semibold">Contato Direto</p>
+                        </div>
+                    `;
+                    containerResultados.appendChild(card);
+                });
+
+            } catch (error) {
+                loading.classList.add('hidden');
+                loading.classList.remove('flex');
+                alert("Erro na operação: " + error.message);
+            } finally {
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+    </script>
+</body>
+</html>
